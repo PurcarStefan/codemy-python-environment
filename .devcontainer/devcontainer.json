@@ -9,7 +9,8 @@
       "extensions": [
         "ms-python.python",
         "ms-python.vscode-pylance",
-        "ms-toolsai.jupyter"
+        "ms-toolsai.jupyter",
+        "ritwickdey.LiveServer"
       ],
       "settings": {
         "terminal.integrated.defaultProfile.linux": "bash",
@@ -23,5 +24,5 @@
       }
     }
   },
-  "postCreateCommand": "echo 'PS1=\"$ \"' >> ~/.bashrc && source ~/.bashrc"
+  "postCreateCommand": "echo 'PS1=\"$ \"' >> ~/.bashrc && source ~/.bashrc && echo 'python /workspaces/${localWorkspaceFolderBasename}/shutdown.py' >> ~/.bash_logout"
 }
