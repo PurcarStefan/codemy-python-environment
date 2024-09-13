@@ -8,7 +8,7 @@ def main():
 def run_command(command):
     process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
     output, error = process.communicate()
-    return output.decode('utf-8'), error.decode('utf-8')
+    return output.decode('utf-8'), error.decode('utf-8'), process.returncode
 
 def commit_and_push():
     print("Adăugare modificări...")
@@ -18,13 +18,14 @@ def commit_and_push():
     run_command('git commit -m "Salvare automată la închidere"')
 
     print("Push către repository...")
-    output, error = run_command("git push")
+    output, error, returncode = run_command("git push")
 
-    if error:
+    if returncode != 0:
         print(f"Eroare la push: {error}")
     else:
         print(output)
         print("Push realizat cu succes!")
+
 
 if __name__ == "__main__":
     main()
