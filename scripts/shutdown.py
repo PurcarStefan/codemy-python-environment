@@ -18,12 +18,11 @@ def commit_and_push():
     run_command('git commit -m "Salvare automată la închidere"')
 
     print("Push către repository...")
-    output, error, returncode = run_command("git push")
+    _, error, returncode = run_command("git push")
 
     if returncode != 0:
         print(f"Eroare la push: {error}")
     else:
-        print(output)
         print("Push realizat cu succes!")
 
 
