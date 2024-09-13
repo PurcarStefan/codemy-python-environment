@@ -23,6 +23,7 @@ def commit_and_push():
     if error:
         print(f"Eroare la push: {error}")
     else:
+        print(output)
         print("Push realizat cu succes!")
 
 if __name__ == "__main__":
