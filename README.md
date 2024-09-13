@@ -25,6 +25,6 @@ Dupa ce Codespace-ul s-a incarcat, veti avea acces la un editor VS Code in brows
 
 Munca voastra este salvata automat in Codespace.
 
-Inainte de inchiderea sesiunii, este recomandat sa rulati `python shutdown.py` pentru a da commit si push la schimbari
+Inainte de inchiderea sesiunii, este recomandat sa rulati comanda `./save.sh` pentru a da commit si push la schimbari
 
 Spor la invatat si programare placuta!
