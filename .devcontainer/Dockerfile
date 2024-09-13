@@ -1,0 +1,7 @@
+FROM python:3.10-slim
+
+WORKDIR /workspace
+
+COPY . /workspace
+
+RUN pip install --upgrade pip
