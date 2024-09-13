@@ -18,7 +18,7 @@ def commit_and_push():
     run_command('git commit -m "Salvare automată la închidere"')
 
     print("Push către repository...")
-    _, error = run_command("git push")
+    output, error = run_command("git push")
 
     if error:
         print(f"Eroare la push: {error}")
