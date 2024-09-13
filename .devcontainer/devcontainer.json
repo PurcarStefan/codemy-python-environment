@@ -1,17 +1,27 @@
 {
-  "name": "Python Dev Environment",
-  "dockerFile": "Dockerfile",
-  "settings": {
-    "python.pythonPath": "/usr/local/bin/python",
-    "python.linting.enabled": true,
-    "python.linting.pylintEnabled": true,
-    "editor.formatOnSave": true
+  "name": "Python Development Environment for Students",
+  "image": "mcr.microsoft.com/devcontainers/python:0-3.11",
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {}
   },
-  "extensions": [
-    "ms-python.python",
-    "ms-python.vscode-pylance"
-  ],
-  "forwardPorts": [5000],
-  "postCreateCommand": "pip install -r requirements.txt",
-  "remoteUser": "vscode"
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-toolsai.jupyter"
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "terminal.integrated.profiles.linux": {
+          "bash": {
+            "path": "bash",
+            "icon": "terminal-bash"
+          }
+        },
+        "terminal.integrated.shell.linux": "/bin/bash"
+      }
+    }
+  },
+  "postCreateCommand": "echo 'PS1=\"$ \"' >> ~/.bashrc && source ~/.bashrc"
 }
