@@ -1,5 +1,5 @@
 {
-  "name": "Python Development Environment for Students",
+  "name": "Codemy Python Environment",
   "image": "mcr.microsoft.com/devcontainers/python:0-3.11",
   "features": {
     "ghcr.io/devcontainers/features/git:1": {}
